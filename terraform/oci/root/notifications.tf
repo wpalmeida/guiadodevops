@@ -1,5 +1,3 @@
-## Notifications
-
 resource "oci_ons_notification_topic" "root" {
   compartment_id = var.compartment_id
   name           = var.notification_topic_name
