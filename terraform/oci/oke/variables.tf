@@ -18,3 +18,8 @@ variable "cluster_cluster_pod_network_options_cni_type" {
   type = string
   default = "FLANNEL_OVERLAY"
 }
+
+variable "cluster_type" {
+  type = string
+  default = "BASIC_CLUSTER"
+}

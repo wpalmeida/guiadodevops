@@ -64,5 +64,5 @@ resource "oci_containerengine_cluster" "test_cluster" {
     #     }
     #     service_lb_subnet_ids = var.cluster_options_service_lb_subnet_ids
     # }
-    # type = var.cluster_type
+    type = var.cluster_type
 }
