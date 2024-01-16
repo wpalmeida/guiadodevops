@@ -12,3 +12,8 @@ variable "vcn_cidr_block" {
 # variable "vcn_cidr_blocks" {
 #   type = list()
 # }
+
+variable "vcn_display_name" {
+  type = string
+  default = "guiadodevops"
+}
