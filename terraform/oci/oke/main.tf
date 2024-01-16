@@ -5,11 +5,11 @@ resource "oci_containerengine_cluster" "test_cluster" {
     name = var.cluster_name
     vcn_id = data.terraform_remote_state.vcn.outputs.vcn_id
 
-    # #Optional
-    # cluster_pod_network_options {
-    #     #Required
-    #     cni_type = var.cluster_cluster_pod_network_options_cni_type
-    # }
+    #Optional
+    cluster_pod_network_options {
+        #Required
+        cni_type = var.cluster_cluster_pod_network_options_cni_type
+    }
     # defined_tags = {"Operations.CostCenter"= "42"}
     # endpoint_config {
 
