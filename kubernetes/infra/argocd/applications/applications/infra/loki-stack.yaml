@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: loki
+  name: loki-stack
   namespace: argocd
 spec:
   syncPolicy:
@@ -12,7 +12,7 @@ spec:
     syncOptions:
     - CreateNamespace=true
   source:
-    path: kubernetes/infra/loki
+    path: kubernetes/infra/loki-stack
     repoURL: https://github.com/wpalmeida/guiadodevops.git
     targetRevision: HEAD
   destination:

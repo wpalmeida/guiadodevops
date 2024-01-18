@@ -34,7 +34,7 @@ fluent-bit:
   enabled: true
 
 grafana:
-  enabled: false
+  enabled: true
   sidecar:
     datasources:
       label: ""
@@ -52,7 +52,7 @@ prometheus:
     jsonData: "{}"
 
 filebeat:
-  enabled: false
+  enabled: true
   filebeatConfig:
     filebeat.yml: |
       # logging.level: debug
