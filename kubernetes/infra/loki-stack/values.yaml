@@ -34,7 +34,7 @@ fluent-bit:
   enabled: true
 
 grafana:
-  enabled: false
+  enabled: true
   sidecar:
     datasources:
       label: ""
