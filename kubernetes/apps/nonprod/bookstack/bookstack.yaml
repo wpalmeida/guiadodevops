@@ -21,13 +21,13 @@ spec:
         - containerPort: 80
         env:
         - name: APP_URL
-          value: "http://bookstack.guiadodevops.com.br" #your website
+          value: "https://bookstack.guiadodevops.com.br" #your website
         - name: PUID
           value: "1001"
         - name: PGID
           value: "986"
         - name: DB_HOST
-          value: "yourdbhostname"
+          value: "bookstackdb"
         - name: DB_USER
           value: "yourdbusername"
         - name: DB_PASS

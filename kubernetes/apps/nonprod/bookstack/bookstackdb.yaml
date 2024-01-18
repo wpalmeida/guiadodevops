@@ -27,11 +27,11 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: "yoursqlpass"
         - name: MYSQL_DATABASE
-          value: "yoursqldatabasename"
+          value: "yourdbdatabasename"
         - name: MYSQL_USER
-          value: "yoursqlusername"  
+          value: "yourdbusername"  
         - name: MYSQL_PASSWORD
-          value: "yoursqlpass"
+          value: "yourdbupass"
         - name: TZ
           value: "America/Sao_Paulo"   
         volumeMounts:
