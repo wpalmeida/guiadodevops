@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: vault
   namespace: argocd
 spec:
   syncPolicy:
@@ -12,12 +12,10 @@ spec:
     syncOptions:
     - CreateNamespace=true
   source:
-    path: kubernetes/infra/cert-manager
+    path: kubernetes/infra/vault
     repoURL: https://github.com/wpalmeida/guiadodevops.git
     targetRevision: HEAD
-    directory:
-      recurse: true
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: security
+    namespace: vault
   project: infra
