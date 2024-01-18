@@ -9,6 +9,21 @@ resource "oci_containerengine_cluster" "guiadodevops" {
         cni_type = var.cluster_cluster_pod_network_options_cni_type
     }
     type = var.cluster_type
+	endpoint_config {
+		is_public_ip_enabled = "true"
+		subnet_id = data.terraform_remote_state.vcn.outputs.api_endpoint_subnet_id
+	}
+	options {
+		kubernetes_network_config {
+			pods_cidr = "10.244.0.0/16"
+			services_cidr = "10.96.0.0/16"
+		}
+		persistent_volume_config {
+		}
+		service_lb_config {
+		}
+		service_lb_subnet_ids = [data.terraform_remote_state.vcn.outputs.service_lb_subnet_id]
+	}
 }
 
 resource "oci_containerengine_node_pool" "default" {
