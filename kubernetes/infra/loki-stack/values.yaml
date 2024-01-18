@@ -23,7 +23,7 @@ loki:
 
 
 promtail:
-  enabled: true
+  enabled: false
   config:
     logLevel: info
     serverPort: 3101
@@ -34,7 +34,7 @@ fluent-bit:
   enabled: true
 
 grafana:
-  enabled: true
+  enabled: false
   sidecar:
     datasources:
       label: ""
@@ -52,7 +52,7 @@ prometheus:
     jsonData: "{}"
 
 filebeat:
-  enabled: true
+  enabled: false
   filebeatConfig:
     filebeat.yml: |
       # logging.level: debug
@@ -70,7 +70,7 @@ filebeat:
         hosts: ["logstash-loki:5044"]
 
 logstash:
-  enabled: true
+  enabled: false
   image: grafana/logstash-output-loki
   imageTag: 1.0.1
   filters:
