@@ -45,7 +45,7 @@ resource "oci_containerengine_node_pool" "default" {
 			fault_domains = ["FAULT-DOMAIN-2"]
 			subnet_id = data.terraform_remote_state.vcn.outputs.node_subnet_id
 		}
-		size = "1"
+		size = "2"
 	}
 	node_eviction_node_pool_settings {
 		eviction_grace_duration = "PT60M"
