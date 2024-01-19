@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: conversor-temperatura-app-nonprod
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true 
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  source:
+    path: kubernetes/
+    repoURL: https://github.com/wpalmeida/conversortemperatura.git
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: conversor-temperatura-app-nonprod
+  project: nonprod
