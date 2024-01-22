@@ -11,7 +11,7 @@ variable "cluster_kubernetes_version" {
 
 variable "cluster_name" {
   type = string
-  default = "guiadodevops"
+  default = "oke"
 }
 
 variable "cluster_cluster_pod_network_options_cni_type" {
