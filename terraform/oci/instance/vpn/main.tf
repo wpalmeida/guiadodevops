@@ -1,5 +1,6 @@
 resource "oci_core_instance" "example_instance" {
   availability_domain = var.availability_domain
+  display_name = var.instance_display_name
   compartment_id      = var.compartment_id
   shape               = var.shape
 
@@ -10,7 +11,7 @@ resource "oci_core_instance" "example_instance" {
   source_details {
     source_type = "image"
 
-    image_id = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaa22wjczcl7udl7w7e347zkwig7mh5p3zfbcemzs46jiaeom5lznyq"
+    source_id = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaa22wjczcl7udl7w7e347zkwig7mh5p3zfbcemzs46jiaeom5lznyq"
   }
 
   metadata = {
