@@ -39,7 +39,7 @@ spec:
             # - name: dashy-data
             #   mountPath: /app/public
             - name: config-volume
-              mountPath: /app/public/conf.yml
+              mountPath: /app/public/
           livenessProbe:
             tcpSocket:
               port: 8888
