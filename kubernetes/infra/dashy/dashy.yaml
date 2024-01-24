@@ -41,17 +41,17 @@ spec:
             #   mountPath: /app/public
             - name: config-volume
               mountPath: /app/public/
-          livenessProbe:
-            tcpSocket:
-              port: 8888
-            initialDelaySeconds: 15
-            periodSeconds: 20
-          readinessProbe:
-            httpGet:
-              path: /home
-              port: 8888
-            initialDelaySeconds: 5
-            periodSeconds: 3              
+          # livenessProbe:
+          #   tcpSocket:
+          #     port: 8888
+          #   initialDelaySeconds: 15
+          #   periodSeconds: 20
+          # readinessProbe:
+          #   httpGet:
+          #     path: /home
+          #     port: 8888
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 3              
    
 
   # volumeClaimTemplates:
