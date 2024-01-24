@@ -13,8 +13,8 @@ spec:
 ---
 
 apiVersion: apps/v1
-# kind: StatefulSet
-kind: Deployment
+kind: StatefulSet
+# kind: Deployment
 metadata:
   name: dashy
   namespace: monitoring
@@ -37,37 +37,37 @@ spec:
               containerPort: 8888
               protocol: TCP
           volumeMounts:
-            # - name: dashy-data
-            #   mountPath: /app/public
-            - name: config-volume
-              mountPath: /app/public/
-          # livenessProbe:
-          #   tcpSocket:
-          #     port: 8888
-          #   initialDelaySeconds: 15
-          #   periodSeconds: 20
-          # readinessProbe:
-          #   httpGet:
-          #     path: /home
-          #     port: 8888
-          #   initialDelaySeconds: 5
-          #   periodSeconds: 3              
+            - name: dashy-data
+              mountPath: /app/public
+            # - name: config-volume
+            #   mountPath: /app/public/
+          livenessProbe:
+            tcpSocket:
+              port: 8888
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /home
+              port: 8888
+            initialDelaySeconds: 5
+            periodSeconds: 3              
    
 
-  # volumeClaimTemplates:
-  #   - metadata:
-  #       name: dashy-data
-  #     spec:
-  #       accessModes: ["ReadWriteOnce"]
-  #       volumeMode: Filesystem
-  #       resources:
-  #         requests:
-  #           storage: 1Gi
+  volumeClaimTemplates:
+    - metadata:
+        name: dashy-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        volumeMode: Filesystem
+        resources:
+          requests:
+            storage: 1Gi
 
-      volumes:
-      - name: config-volume
-        configMap:
-          name: dashy-config
+      # volumes:
+      # - name: config-volume
+      #   configMap:
+      #     name: dashy-config
 
 ---
 
