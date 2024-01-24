@@ -3,7 +3,7 @@
 {{- if .Values.server.ingress.enabled -}}
 {{- $serviceName := include "vault.fullname" . -}}
 {{- $servicePort := .Values.server.service.port -}}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ template "vault.fullname" . }}
@@ -38,9 +38,15 @@ spec:
         paths:
         {{- range .paths }}
           - path: {{ . }}
+            pathType: Prefix
+            # backend:
+            #   serviceName: {{ $serviceName }}
+            #   servicePort: {{ $servicePort }}
             backend:
-              serviceName: {{ $serviceName }}
-              servicePort: {{ $servicePort }}
+              service:
+                name: {{ $serviceName }}
+                port:
+                  number: {{ $servicePort }}
         {{- end }}
   {{- end }}
 {{- end }}
