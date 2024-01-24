@@ -36,8 +36,8 @@ spec:
               containerPort: 8888
               protocol: TCP
           volumeMounts:
-            - name: dashy-data
-              mountPath: /app/public
+            # - name: dashy-data
+            #   mountPath: /app/public
             - name: config-volume
               mountPath: /app/public/conf.yml
           livenessProbe:
@@ -53,15 +53,15 @@ spec:
             periodSeconds: 3              
    
 
-  volumeClaimTemplates:
-    - metadata:
-        name: dashy-data
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        volumeMode: Filesystem
-        resources:
-          requests:
-            storage: 1Gi
+  # volumeClaimTemplates:
+  #   - metadata:
+  #       name: dashy-data
+  #     spec:
+  #       accessModes: ["ReadWriteOnce"]
+  #       volumeMode: Filesystem
+  #       resources:
+  #         requests:
+  #           storage: 1Gi
 
       volumes:
       - name: config-volume
