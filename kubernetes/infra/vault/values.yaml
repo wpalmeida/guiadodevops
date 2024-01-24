@@ -106,8 +106,7 @@ server:
     hosts:
       - host: vault.guiadodevops.com.br
         paths:
-          - path: /
-            pathType: Prefix
+        - pathType: Prefix
 
     tls:
      - secretName: vault-tls
