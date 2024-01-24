@@ -105,9 +105,7 @@ server:
       # kubernetes.io/tls-acme: "true"
     hosts:
       - host: vault.guiadodevops.com.br
-        paths:
-        - path: /
-          pathType: Prefix
+        paths: /
 
     tls:
      - secretName: vault-tls
