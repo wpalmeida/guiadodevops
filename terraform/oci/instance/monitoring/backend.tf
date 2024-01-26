@@ -3,7 +3,7 @@ terraform {
     resource_group_name  = "guiadodevops"
     storage_account_name = "guiadodevops"
     container_name       = "terraform"
-    key                  = "vpn/terraform.tfstate"
+    key                  = "oci/instance/monitoring/terraform.tfstate"
   }
 }
 

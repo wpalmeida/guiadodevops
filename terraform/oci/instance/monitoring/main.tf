@@ -1,4 +1,4 @@
-resource "oci_core_instance" "example_instance" {
+resource "oci_core_instance" "monitoring" {
   availability_domain = var.availability_domain
   display_name = var.instance_display_name
   compartment_id      = var.compartment_id
