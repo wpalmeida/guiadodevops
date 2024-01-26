@@ -1,6 +1,6 @@
 ---
 - name: Install Docker
-  hosts: your_target_host
+  hosts: runners
   become: yes
 
   tasks:
