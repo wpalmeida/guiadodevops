@@ -1,6 +1,7 @@
 ---
 - name: Install Pritunl
-  hosts: your_target_host
+  hosts: vpn
+  become_user: opc
   become: yes
 
   tasks:
