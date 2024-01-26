@@ -1,0 +1,41 @@
+---
+- name: Install Kubernetes
+  hosts: your_target_host
+  become: yes
+
+  tasks:
+    - name: Install required dependencies
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+
+    - name: Add Kubernetes APT repository
+      apt_repository:
+        repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+        state: present
+        update_cache: yes
+
+    - name: Add Kubernetes GPG key
+      apt_key:
+        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+    - name: Update package cache after adding Kubernetes repository
+      apt:
+        update_cache: yes
+
+    - name: Install kubelet, kubeadm, and kubectl
+      apt:
+        name:
+          - kubelet
+          - kubeadm
+          - kubectl
+        state: present
+
+    - name: Ensure kubelet is started and enabled
+      systemd:
+        name: kubelet
+        state: started
+        enabled: yes

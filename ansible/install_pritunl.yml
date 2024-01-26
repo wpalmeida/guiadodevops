@@ -1,0 +1,30 @@
+---
+- name: Install Pritunl
+  hosts: your_target_host
+  become: yes
+
+  tasks:
+    - name: Add Pritunl APT repository
+      apt_repository:
+        repo: deb http://repo.pritunl.com/stable/apt focal main
+        state: present
+        update_cache: yes
+
+    - name: Add Pritunl GPG key
+      apt_key:
+        url: https://www.pritunl.com/keys/pritunl_gpg.key
+
+    - name: Update package cache after adding Pritunl repository
+      apt:
+        update_cache: yes
+
+    - name: Install Pritunl
+      apt:
+        name: pritunl
+        state: present
+
+    - name: Ensure Pritunl service is started and enabled
+      systemd:
+        name: pritunl
+        state: started
+        enabled: yes
