@@ -1,6 +1,7 @@
 ---
 - name: Install Docker
   hosts: runners
+  become_user: opc
   become: yes
 
   tasks:
