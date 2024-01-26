@@ -11,7 +11,7 @@ resource "oci_core_instance" "monitoring" {
   source_details {
     source_type = "image"
 
-    source_id = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaa22wjczcl7udl7w7e347zkwig7mh5p3zfbcemzs46jiaeom5lznyq"
+    source_id = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaaaqqu7h5rkavka5z2343l64qdfp445c6wyfbmvrphmoy4377xa4aa"
   }
 
   metadata = {
