@@ -16,5 +16,5 @@ variable "availability_domain" {
 
 variable "shape" {
   type = string
-  default = "VM.Standard.E3.Flex"
+  default = "VM.Standard2.1"
 }
