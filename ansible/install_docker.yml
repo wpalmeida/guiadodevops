@@ -1,6 +1,7 @@
 ---
 - name: Install Docker
   hosts: monitoring
+  become_user: root
   remote_user: opc
   become: yes
 
