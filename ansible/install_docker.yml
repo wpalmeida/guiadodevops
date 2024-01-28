@@ -1,6 +1,6 @@
 ---
 - name: Install Docker
-  hosts: runners
+  hosts: monitoring
   become_user: opc
   become: yes
 
