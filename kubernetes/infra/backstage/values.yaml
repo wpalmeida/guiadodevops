@@ -92,7 +92,7 @@ backstage:
   image:
 
     # -- Backstage image registry
-    registry:
+    registry: ""
 
     # -- Backstage image repository
     repository: mydocker12we/backstage
