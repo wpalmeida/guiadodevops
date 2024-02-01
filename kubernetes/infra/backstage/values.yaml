@@ -92,10 +92,10 @@ backstage:
   image:
 
     # -- Backstage image registry
-    registry: ""
+    registry: ghcr.io
 
     # -- Backstage image repository
-    repository: mydocker12we/backstage
+    repository: backstage/backstage
 
     # -- Backstage image tag (immutable tags are recommended)
     tag: latest
