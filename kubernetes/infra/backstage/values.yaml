@@ -92,7 +92,7 @@ backstage:
   image:
 
     # -- Backstage image registry
-    registry: hub.docker.com
+    registry: ""
 
     # -- Backstage image repository
     repository: wpalmeida/backstage
