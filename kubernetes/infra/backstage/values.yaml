@@ -92,13 +92,13 @@ backstage:
   image:
 
     # -- Backstage image registry
-    registry: ghcr.io
+    registry: hub.docker.com
 
     # -- Backstage image repository
-    repository: backstage/backstage
+    repository: wpalmeida/backstage
 
     # -- Backstage image tag (immutable tags are recommended)
-    tag: latest
+    tag: 1.0.0
 
     # -- Specify a imagePullPolicy.
     # Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
