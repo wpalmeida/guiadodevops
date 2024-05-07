@@ -791,7 +791,7 @@ grafana.ini:
     name: Keycloak-OAuth
     allow_sign_up: true
     client_id: Keycloak-OAuth
-    client_secret: YOUR_APP_CLIENT_SECRET
+    client_secret: password
     scopes: openid email profile offline_access roles
     email_attribute_path: email
     login_attribute_path: username
