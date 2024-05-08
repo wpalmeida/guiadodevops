@@ -9,6 +9,7 @@ spec:
       prune: true
       allowEmpty: true 
       selfHeal: true
+      enabled: false      
     syncOptions:
     - CreateNamespace=true
   source:
