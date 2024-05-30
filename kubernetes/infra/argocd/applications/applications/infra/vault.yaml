@@ -1,21 +1,21 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-  #name: vault
-  #namespace: argocd
-#spec:
-  #syncPolicy:
-    #automated:
-      #prune: true
-      #allowEmpty: true 
-      #selfHeal: true
-    #syncOptions:
-    #- CreateNamespace=true
-  #source:
-    #path: kubernetes/infra/vault
-    #repoURL: https://github.com/wpalmeida/guiadodevops.git
-    #targetRevision: HEAD
-  #destination:
-    #server: 'https://kubernetes.default.svc'
-    #namespace: security
-  #project: infra
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true 
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  source:
+    path: kubernetes/infra/vault
+    repoURL: https://github.com/wpalmeida/guiadodevops.git
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: security
+  project: infra
