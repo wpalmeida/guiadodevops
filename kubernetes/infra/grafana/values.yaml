@@ -796,9 +796,9 @@ grafana.ini:
     email_attribute_path: email
     login_attribute_path: username
     name_attribute_path: full_name
-    auth_url: https://keycloak.guiadodevops.com.br/realms/myrealm/protocol/openid-connect/auth
-    token_url: https://keycloak.guiadodevops.com.br/realms/myrealm/protocol/openid-connect/token
-    api_url: https://keycloak.guiadodevops.com.br/realms/myrealm/protocol/openid-connect/userinfo
+    auth_url: https://keycloak.taller.ai/realms/infra/protocol/openid-connect/auth
+    token_url: https://keycloak.taller.ai/realms/infra/protocol/openid-connect/token
+    api_url: https://keycloak.taller.ai/realms/infra/protocol/openid-connect/userinfo
     role_attribute_path: contains(roles[*], 'admin') && 'Admin' || contains(roles[*], 'editor') && 'Editor' || 'Viewer'
 ## LDAP Authentication can be enabled with the following values on grafana.ini
 ## NOTE: Grafana will fail to start if the value for ldap.toml is invalid
